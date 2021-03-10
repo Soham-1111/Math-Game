@@ -33,3 +33,47 @@ function send(){
     document.getElementById("number2").value= "";
 
 }
+
+question_turn="player1";
+answer_turn="player2";
+
+function check(){
+    get_answer= document.getElementById("answer").value;
+
+    if(actual_answer == get_answer){
+
+        if(answer_turn == "player1"){
+            player1_score= player1_score+1;
+            document.getElementById("score1").innerHTML= player1_score;
+        }
+
+        else{
+            player2_score= player2_score+1;
+            document.getElementById("score2").innerHTML= player2_score; 
+        }
+    }
+
+    if(question_turn=="player1"){
+        question_turn="player2";
+        document.getElementById("questionturn").innerHTML= "Question Turn :" + player2_name;
+    }
+ 
+    else{
+        question_turn="player1";
+        document.getElementById("questionturn").innerHTML="Question Turn :"+ player1_name;
+    }
+ 
+    if(answer_turn=="player1"){
+        answer_turn= "player2";
+        document.getElementById("answerturn").innerHTML="Answer Turn :"+ player2_name;
+    }
+ 
+    else{
+        answer_turn="player1";
+        document.getElementById("answerturn").innerHTML= "Answer Turn :"+ player1_name;
+ 
+        
+ }
+ 
+    document.getElementById("output").innerHTML= "";
+}
